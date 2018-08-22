@@ -38,6 +38,12 @@
          computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
          console.log(computerGuess);
      }
+
+     //this is for if the letter is not guessed correctly, it keeps your guesses left count
+     else if (userGuess !== computerGuess) {
+        guessesLeft--;
+    }
+
      // this is for if you run out of guesses
      else if (guessesLeft === 1) {
          losses++;
@@ -46,13 +52,8 @@
          soFar = [];
          computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
          console.log(computerGuess);
-
      }
-    //this is keeping your guesses left count
-     else if (userGuess !== computerGuess) {
-         guessesLeft--;
-
-     }
+    
      //assigns the new values to the wins, losses, guesses left, and the guesses so far variables
      winsText.textContent = wins;
      lossesText.textContent = losses;
